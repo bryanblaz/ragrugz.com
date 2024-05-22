@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragrugz</title>
+    <style>
+        :root {
+            --border-width: 2px; /* Define a custom CSS variable for border width */
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 400vh;
+            background-color: #fff;
+        }
+
+        /* Left background images */
+        .background-left {
+            position: absolute;
+            left: 0;
+            transform: translateY(20%); /* Adjust to center vertically */
+            width: 50%; /* Set width to desired size */
+            height: 100%; /* Cover the entire height of the viewport */
+            z-index: 0;
+            opacity: 1.0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .background-right {
+            position: absolute;
+            right: 0;
+            transform: translateY(140%); /* Adjust to center vertically */
+            width: 35%; /* Set width to desired size */
+            height: 100%; /* Cover the entire height of the viewport */
+            z-index: 0;
+            opacity: 1.0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+.background-center.image1 {
+    position: absolute;
+    left: 0; /* Position the div at the left edge of the viewport */
+    width: 100%; /* Stretch the width to cover the entire viewport horizontally */
+    height: 140%; /* Cover the entire height of the viewport */
+    transform: translateY(175%);
+    z-index: 0;
+    opacity: 1.0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+        .background-left.image1 {
+        background-image: url("https://lh3.googleusercontent.com/pw/AP1GczOzB_XI5809fWrK1fhd7FGpE4Qhxh0p6pdmKjURirFlkzy1fceWInHY0XRrrzg1rJKKh0HY6wh2g-afDjAFSiykOCWspMXBi014GhW_2wb0kPnaODAMqy9mFyxCBrG-HOhRCaph0Lme6nMSz0f9ignd4_doWqOCUHMxKTnYMVRlfL9nv58CKzGKMum6Lsv-mWiLpyl42TwOukDO1pS7jOAEMBKrtl4zUzsAsxFrT3NAjm9-LtH-9Qb4YvtntvanTHvi8HgbL4521sRBT9oBqOabU5FBh_K2cjBTeD4k0UMfT7stK1p5Wa1aYgAzpWEkHCXyFL-y6kwtvfXZwvwfyu91nSD6wQYUVGRLeQTEfhu0uqRNHPoMU5QZ2ZRyJ_rxkpoYnSDtH0SSEKvMJlwsR_3ivCnZtG8qYQITesPZxHkgCoJbsF6ta2usjcYuD3-MAMDTI2R0SDInceC3Jv5IeyMAgo0EX4Opzv41kUlLjDT-pHqdheyeO6wNx8EpTO-DbWAJWGrCpjilFAQ5kSZA3xe3nOwM3MOMkl9p07wOm74PpdNHpPf7mvrpZcR93L6WC9BDr-oIKDMLwmlpavEsg34QVy_5Q1rmCtUD6_dxzJVLOxGrxK56-tVeoyev2wVVKq4kV7DApQLTiwIGJmgWkAs435mTsUGvjtrWvtwfcPJY7Pr0n1mezsHBWE49iH9bojbE1zepQbenXrIfFbyvmJKiBkIk7Ct1_h4I7_kpPhtPDUldYwPYaREGvA9ggkjfleOhKXu6Yz5U95Ut_A1Uctj3fX9eI3r60K_fMyUNIYHD8j6jcUmoZYJ-5K8gjmWdvBIiKQYYWHpIzU11gjA2FtUkmlTP6BQEdAjFrdKwaXRS-t9mff_UxAs6Z0BGLIE92ZcU3FCBHZfzsIuAlOX_kC4=w674-h854-s-no-gm?authuser=0");
+        }
+
+  	.background-right.image1 {
+        background-image: url("https://lh3.googleusercontent.com/pw/AP1GczMefFluFnkFtbwI4517eukmvsoGoOydlC_xj7k9bsZ4TDCrxYaoY8A3a3YuJewipYpZzk062QZsxX5FZCQHcVVr-MkFWA8Ub9auxchPRuYrywQ7eTRFt8oQJB8XPFKiGjKMGxlhMVxmtWAfNyAbl-M1pZyNJ7VJGNoxq7pwXmqcLKsXtkhe9x7H5HazWQSon_sVbXSV3mZlRGWEAbCDK8609Ct_QRulhcT3SHKIblOtnyD5_2YDj3fjQqqNy0ye-KC_f5KhORXqJKkS1pl0LqzhPLcDAbERdaCMtbN2cZ_tU0V-nzelQHcsG5FmM-7t5eX61Ed-3USQhM_EHryy55Q9sQGDxeDhrrRD8gRQzQd26aEWle8yXaV-PRv2-NsRHd-pBs7REOi5hUZdtL9Zg2LEx3bY83KSbSkpo6J_AW1J6AbKyK7NWHOiqZI8otrLj7-smsCvDRbx9yxgTAT-rWtOux9wg7_zmNBnAwYFHwrxBLRupLsxPfsojB05n9WY6jK_So864rvwkPIH4dCj1MP7lHRvB72S1zh7ZEH19jpQw3LiwbBwAHCDToveAZO7pHfCKlleHMelk0MK5Go4AVA7UUArxguJFqYbDsj6P7wotNdA27s15nnOIRYq2dBYZoCLsX9iQUqDnhtUcAOM5keLZlFxBGUqHHobu2aqcSV8idV2yJkUMyBYcl7cQ2YsIb9TsA0dPPcxMek0RpV9xcw7onrfcuiPu8dODa7dOp40f8bY3zLDuymba4bqPquyHCN8H5lgg-xBajVYcI_kZ7-VVt4vSpRNnNNRFQZtl7_Zc9XNuydu389q45kyi9T77wLzB1kpJBBCAvr8eDEzMr1a-QVYMhS9NgO3kRjpbfGkzixxNobUz6KDdbQo0Vvv5YlFhF_mKoutSaLZzI3sjEY=w662-h854-s-no-gm?authuser=0");
+        }
+
+  	.background-center.image1 {
+            background-image: url("https://lh3.googleusercontent.com/pw/AP1GczM33o7M_sSDr-qC-ZTVi1zU8CtQT4AqeorCYX0nKIKoHsvHTVdjePWzdqdpZSpHGksEkXBn3zpmZBQbf4ecbF6inKgaG6fZJtXLt5oBgfZOcwE2ZJD3AHlUf_lq-WbcweRuyP_Arw84E2aO1ZncZuuo=w1166-h777-s-no-gm?authuser=0");
+        }
+
+        /* Menu Styles */
+        .container {
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0px;
+            width: 100%; /* Make the container span the entire width */
+            box-sizing: border-box;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .logo-container,
+        .menu-container {
+            border-bottom: var(--border-width) solid #fff; /* Use custom CSS variable for border width */
+            background-color: rgba(255, 255, 255, 1.0);
+            width: 100%;
+            margin: 0 auto; /* Center the container */
+        }
+
+        .logo {
+            max-width: 13%;
+            height: auto;
+            margin-bottom: -5px;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0px;
+            margin-top: 0;
+        }
+
+        .menu li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+	    font-size: 14px; /* Adjust the font size as needed */
+        }
+
+        .menu li a:hover {
+            color: #555;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Main content */
+        .main-content1 {
+            margin-top: 150px;
+            transform: translateX(40%); /* Adjust to center vertically */
+            text-align: center;
+            z-index: 0;
+	    font-size: 12.7px; /* Adjust the font size as desired */
+        }
+
+        .main-content2 {
+	    color: #34A853; /* Change font color to green */
+            margin-top: 200px;
+            transform: translateX(0%); /* Adjust to center vertically */
+            text-align: center;
+            z-index: 0;
+	  
+        }
+
+        .main-content3 {
+            margin-top: 70px;
+            transform: translateX(-30%); /* Adjust to center vertically */
+            text-align: left;
+            z-index: 0;
+        }
+
+        .main-content4 {
+	    color: #4285F4; /* Change font color to red */
+            margin-top: 410px;
+            transform: translateX(0%); /* Adjust to center vertically */
+            text-align: center;
+            z-index: 0;
+	    font-size: 24px; /* Adjust the font size as desired */
+        }
+
+
+        .main-content5 {
+	    color: #FF0000; /* Change font color to red */
+            margin-top: 300px;
+            transform: translateX(-0%); /* Adjust to center vertically */
+            text-align: center;
+            z-index: 0;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: rgba(255, 255, 255, 0.0);
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="background-left image1"></div>
+<div class="background-right image1"></div>
+<div class="background-center image1"></div>
+<div class="container">
+    <div class="logo-container">
+        <a href="index.html"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
+    </div>
+    <div class="menu-container">
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Our Products</a>
+                <div class="dropdown-content">
+                    <a href="thefounder.html">Our Rugs</a>
+                    <a href="ragapparel.html">Ragrugz Apparel</a>
+                    <a href="therugpurse.html">The Rug Purse</a>
+                </div>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">About Us</a>
+                <div class="dropdown-content">
+                    <a href="thefounder.html">The Founder</a>
+                    <a href="theragstory.html">The Rag Story</a>
+                </div>
+            </li>
+
+            <li><a href="custom-order.html">Custom Order</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="main-content1">
+    <strong>The Founder</strong>
+	<p>Bryan Anderson founded RagRugz™ in 2022. After discovering the world of tufting,</p>
+	<p>it unveiled a canvas where imagination and craftsmanship intertwine, inviting one</p>
+	<p>to weave their unique story into every loop and pile, and open a doorway to a realm</p>
+	 <p>where fibers transform into art. A vibrant journey of creativity, where every knot</p>
+	<p>and stitch tells a unique story. The joy of weaving colors and patterns together</p>
+	<p>fills the heart with excitement, turning threads into a tapestry of beauty. With</p>
+	<p>each completed rug, a sense of fulfillment and pride blossoms, celebrating the</p>
+	<p>artistry and craftsmanship behind every piece. This rug company transcends the</p>
+	<p>ordinary by weaving its creativity into more than just rugs. From bespoke clothing</p>
+	<p>that carries the warmth of home to intricate art pieces that tell stories of craftsmanship,</p> 
+	<p>their offerings extend far beyond the floor. Embracing novelty, they reimagine everyday</p> 
+	<p>items, infusing them with the cozy charm and timeless elegance of their signature rugs.</p>
+</div>
+
+<br>
+<div class="main-content2">
+    <strong>"creativity comes from your inner child"</strong>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Bryan Durrell Anderson</p>
+</div>
+
+<div class="main-content3">
+	<p>Creating your own brand is an exhilarating journey of self-expression</p>
+	<p>and innovation. It's about distilling your unique vision, values, and</p> 
+	<p>voice into a compelling narrative that resonates with your audience. </p>
+	<p>From conceptualization to execution, every step in the branding process</p>
+ 	<p>is an opportunity to infuse your identity into the fabric of your business,</p> 
+	<p>establishing a distinct identity that sets you apart in a crowded marketplace.</p>
+	<p>. It's a testament to your creativity, resilience, and entrepreneurial spirit,</p>
+	<p>as you navigate the challenges and triumphs of building something from the</p>
+	<p>ground up. Ultimately, creating your own brand is not just about selling a</p>
+	<p>product or service; it's about crafting a legacy that reflects who you are</p>
+	<p>and what you stand for, leaving an indelible mark on the world.</p>
+<br>
+<br>	<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&copy; 2024 Experiment Projects. All Rights Reserved.</p>
+
+</div>
+
+<div class="main-content4">
+    <strong>"being alone at home is like having your own laboratory"</strong>
+<p></p>
+</div>
+
+<div class="main-content5">
+    <p>Being at home is more than just occupying a physical space; it's about embracing a sanctuary where creativity and intelligence converge to shape one's brand and vision. In this familiar haven, surrounded by the comforts of solitude, individuals have the freedom to explore their inner depths, tapping into their reservoirs of creativity and intellect to craft something truly extraordinary. It's within the walls of our homes that we find the canvas upon which we paint our dreams, utilizing every brushstroke of innovation and every stroke of ingenuity to bring our brand to life. Home becomes the incubator for our ideas, nurturing them with care and fostering an environment where they can flourish and evolve. It's a place where the fusion of imagination and insight ignites the spark of innovation, propelling us towards the realization of our fullest potential. In the sanctuary of home, we are not confined by boundaries but empowered by the limitless possibilities that come with being true to ourselves and our aspirations. It is here, amidst the quietude of familiarity, that we find the courage to embark on the journey of self-discovery and brand creation, fueled by the unwavering belief in our ability to make a meaningful impact on the world..</p>
+</div>
+
+<div class="background-left">
+    <!-- Set the image as background image instead of using img tag -->
+    
+</div>
+
+<div class="footer">
+    <p></p>
+    <p></a></p>
+</div>
+
+</body>
+</html>
