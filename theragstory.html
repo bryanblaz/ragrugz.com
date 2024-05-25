@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ragrugz</title>
     <style>
@@ -10,7 +11,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
+            flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
@@ -19,19 +20,19 @@
 
         .container {
             text-align: center;
-            margin-top: 0; /* Adjust margin-top to position content */
-            padding-top: 20px; /* Add padding to separate from top */
-            width: 100%; /* Make container full width */
-            box-sizing: border-box; /* Include padding in width calculation */
+            margin-top: 0;
+            padding-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
             position: fixed;
             top: 0;
             left: 0;
             background-color: #fff;
-            z-index: 999; /* Ensure it's above other content */
+            z-index: 999;
         }
 
         .logo {
-            max-width: 15%;
+            max-width: 10%;
             height: auto;
             margin-bottom: 0px;
         }
@@ -40,7 +41,7 @@
             list-style-type: none;
             padding: 0;
             margin-top: 0;
-            background-color: #fff; /* Ensure menu background matches container */
+            background-color: #fff;
         }
 
         .menu li {
@@ -57,7 +58,6 @@
             color: #555;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
@@ -88,13 +88,19 @@
             background-color: #ddd;
         }
 
-        /* Main content */
         .main-content {
-            margin-top: 80px; /* Adjust margin to make space for header */
+            margin-top: 100px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center; /* Center aligning the text */
+            line-height: 1.6;
+        }
+
+        .center-content {
             text-align: center;
         }
 
-        /* Footer Styles */
         .footer {
             background-color: #fff;
             padding: 20px 0;
@@ -103,24 +109,43 @@
             position: fixed;
             bottom: 0;
         }
+
+        .footer-image {
+            max-width: 10%;
+            height: auto;
+            display: block;
+            margin: -20px auto 5px auto; /* Center the image horizontally and move it 20px down */
+        }
+
+        .footer-image1 {
+            max-width: 35%;
+            height: auto;
+            display: block;
+            margin: -20px auto 5px auto; /* Center the image horizontally and move it 20px down */
+        }
+
+        @media (max-width: 600px) {
+            .main-content {
+                margin-top: 120px;
+                padding: 10px;
+                width: 95%;
+            }
+        }
     </style>
 </head>
-
 <body>
 <div class="container">
     <a href="index.html"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
     <ul class="menu">
         <li><a href="index.html">Home</a></li>
-        
         <li class="dropdown">
             <a href="#" class="dropbtn">Our Products</a>
             <div class="dropdown-content">
                 <a href="thefounder.html">Our Rugs</a>
-		<a href="ragapparel.html">Ragrugz Apparel</a>
+                <a href="ragapparel.html">Ragrugz Apparel</a>
                 <a href="theragstory.html">The Rug Purse</a>
             </div>
         </li>
-	
         <li class="dropdown">
             <a href="#" class="dropbtn">About Us</a>
             <div class="dropdown-content">
@@ -128,20 +153,46 @@
                 <a href="theragstory.html">The Rag Story</a>
             </div>
         </li>
-
         <li><a href="custom-order.html">Custom Order</a></li>
         <li><a href="contact.html">Contact Us</a></li>
     </ul>
 </div>
 
 <div class="main-content">
-    <p>Here is where you write the paragraph.</p>
+    <p><strong>The Rag Story</strong></p>
+    <p>Ragrugz™ was more than just a design decision—it was an expression of the essence of the company, a visual representation of its values, creativity, and vision. The colors and shapes that make up the Ragrugz logo are a tapestry of meaning, woven together to tell a story of inspiration, innovation, and community.</p>
+
+<br>
+    <p><strong>The Colors of Creativity and Connection</strong></p>
+<br>
+ <img src="https://i.ibb.co/rw2jycZ/blue-ballon.png" alt="Footer Image" class="footer-image">
+    <p><strong>Blue</strong>: The blue circle in our logo symbolizes trust, wisdom, and stability. It is a nod to the endless sky and vast oceans, representing the boundless creativity that Ragrugz embodies. Blue is a color that encourages calm and inspires confidence, reflecting our commitment to quality and our dedication to building a brand that customers can rely on.</p>
+<br>
+ <img src="https://i.ibb.co/MVJVzNX/yellow-ballon.png" alt="Footer Image" class="footer-image">
+    <p><strong>Yellow</strong>: The yellow circle stands for happiness, energy, and optimism. It captures the warmth of the sun, bringing a sense of joy and brightness to our logo. Yellow is the color of creativity and intellectual energy, embodying the innovative spirit that drives Ragrugz to continually push the boundaries of design and craftsmanship.</p>
+<br>
+ <img src="https://i.ibb.co/2MzGQFs/green-ballon.png" alt="Footer Image" class="footer-image">
+    <p><strong>Green</strong>: The green circle represents growth, harmony, and freshness. Green is the color of nature, symbolizing the organic and sustainable practices that are at the heart of our company's values. It also signifies new beginnings and the constant evolution of our product lines, from bespoke rugs to unique apparel and accessories.</p>
+<br>
+ <img src="https://i.ibb.co/VDns5Y0/red-ballon.png" alt="Footer Image" class="footer-image">
+    <p><strong>Red</strong>: The red square, distinct in its shape and color, stands for passion, energy, and action. Red is the color of fire and love, representing the fervent enthusiasm and dedication we pour into every piece we create. It signifies the bold steps we take to innovate and lead in our industry, always with a fiery drive to excel.</p>
+
+<br>
+ <p><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Footer Image1" class="footer-image1"></p>
+    <p><strong>The Shapes of Unity and Innovation</strong></p>
+    <p><strong>Circles</strong>: The circular shapes in our logo are more than just pleasing to the eye—they represent unity, wholeness, and inclusion. Circles have no beginning or end, symbolizing the endless potential and continuous cycle of creativity at Ragrugz. They remind us that every product we create is part of a larger story, one that includes our team, our customers, and the broader community.</p>
+    <p><strong><i>The Essence of Ragrugz</i></strong></p>
+    <p>The Ragrugz logo is a celebration of our journey—from the initial spark of an idea to the thriving business we are today. Each color and shape has been thoughtfully chosen to reflect the core of our identity:</p>
+    <div class="center-content">
+    <p><strong>Creativity</strong>: Blue and yellow speak to our innovative approach and the joy we find in the creative process.</p>
+    <p><strong>Community</strong>: Green represents our commitment to sustainable practices and our connection to nature.</p>
+    <p><strong>Passion</strong>: Red embodies the fervor and drive that fuel our brand.</p>
+    <p><strong>Balance and Innovation</strong>: The interplay between circles and the square illustrates our dedication to blending timeless craftsmanship with modern design.</p>
+    </div>
+    <p>Together, these elements form a logo that is not only visually striking but deeply meaningful—a true reflection of the spirit of Ragrugz. It serves as a constant reminder of our mission to create beautiful, high-quality products that bring warmth, joy, and creativity into the lives of our customers.</p>
 </div>
 
 <div class="footer">
-    <p>&copy; 2024 Ragrugz. All Rights Reserved.</p>
-    <p>Designed by <a href="http://freehtml5.co/" target="_blank">Bryan Anderson</a></p>
 </div>
-
 </body>
 </html>

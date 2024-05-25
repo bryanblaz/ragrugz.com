@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ragrugz</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            max-width: 30%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: -5px;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin-top: -5px;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 10px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+
+        .menu li a:hover {
+            color: #555;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .contact-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group label .required {
+            color: red;
+            margin-left: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(0, 0, 0, 0.2);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .form-group-half {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group-half .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #fbbc05;
+        }
+
+        .address {
+            font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-image {
+            max-width: 20%;
+            height: auto;
+            display: block;
+            margin: -20px auto 5px auto; /* Center the image horizontally and move it 20px down */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Our Products</a>
+            <div class="dropdown-content">
+                <a href="thefounder.html">Our Rugs</a>
+                <a href="ragapparel.html">Ragrugz Apparel</a>
+                <a href="theragstory.html">The Rug Purse</a>
+            </div>
+        </li>
+    
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About Us</a>
+            <div class="dropdown-content">
+                <a href="thefounder.html">The Founder</a>
+                <a href="theragstory.html">The Rag Story</a>
+            </div>
+        </li>
+
+        <li><a href="custom-order.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <h2 class="contact-title">Contact Us</h2>
+    <form id="contact-form" class="contact-form">
+        <div class="form-group-half">
+            <div class="form-group">
+                <label for="first-name">First Name<span class="required">*</span></label>
+                <input type="text" id="first-name" name="first-name" required placeholder="First name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name<span class="required">*</span></label>
+                <input type="text" id="last-name" name="last-name" required placeholder="Last name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="Email address">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number<span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="(###)###-####">
+        </div>
+        <div class="form-group">
+            <label for="message">Message<span class="required">*</span></label>
+            <textarea id="message" name="message" required placeholder="What can we help you with?"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="address">
+    </div>
+    <div style="text-align: center;"> <!-- Center the footer image -->
+        <a href="index.html"><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo" class="footer-image"></a>
+    </div>
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var formData = new FormData(this);
+    
+    fetch('https://script.google.com/macros/s/AKfycbzXEnNgIqld6xA2y5pe-kT9juVIJcHfRAeMSipa0HwQmYu9e03AK01hkhOvR0SRlROR/exec', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === 'success') {
+            alert('Your message has been sent successfully!\nWe will respond within 24 to 48 hours.');
+        } else {
+            alert('There was an error sending your message. Please try again.');
+        }
+    })
+    .catch(error => {
+        alert('There was an error sending your message. Please try again.');
+        console.error('Error:', error);
+    });
+});
+</script>
+
+</body>
+</html>
