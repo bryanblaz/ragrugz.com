@@ -10,29 +10,26 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: #fff;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            text-align: center;
             margin: 0 auto;
-            padding: 20px;
+            padding-top: -10px;
+            width: 100%;
+            box-sizing: border-box;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+	    top: -10;
         }
 
         .logo {
-            max-width: 30%;
+            max-width: 17%;
             height: auto;
             margin: 0 auto;
             display: block;
-            margin-bottom: -5px;
+	    margin-bottom: -5px;
         }
 
         .menu {
@@ -40,6 +37,7 @@
             padding: 0;
             margin-top: -5px;
             display: flex;
+            justify-content: center;
         }
 
         .menu li {
@@ -87,10 +85,20 @@
             background-color: #ddd;
         }
 
+
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+            cursor: pointer;
+        }
+
         .contact-title {
             font-size: 24px;
-            margin-bottom: 30px;
-            text-align: center;
+            margin: 30px 0;
         }
 
         .contact-form {
@@ -168,10 +176,10 @@
         }
 
         .footer-image {
-            max-width: 20%;
+            max-width: 10%;
             height: auto;
             display: block;
-            margin: -20px auto 5px auto; /* Center the image horizontally and move it 20px down */
+            margin: 20px auto; /* Center the image horizontally */
         }
     </style>
 </head>
@@ -185,8 +193,8 @@
             <a href="#" class="dropbtn">Our Products</a>
             <div class="dropdown-content">
                 <a href="thefounder.html">Our Rugs</a>
-                <a href="ragapparel.html">Ragrugz Apparel</a>
-                <a href="theragstory.html">The Rug Purse</a>
+                <a href="https://store.ragrugz.com/">Ragrugz Apparel</a>
+                <a href="theragpurse.html">The Rug Purse</a>
             </div>
         </li>
     
@@ -229,12 +237,31 @@
     </form>
     <div class="address">
     </div>
-    <div style="text-align: center;"> <!-- Center the footer image -->
+    <div style="text-align: center;">
         <a href="index.html"><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo" class="footer-image"></a>
     </div>
 </div>
 
+<a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
+
 <script>
+document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const dropdownContent = this.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -248,6 +275,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     .then(data => {
         if (data.result === 'success') {
             alert('Your message has been sent successfully!\nWe will respond within 24 to 48 hours.');
+            window.location.reload(); // Reload the page after successful submission
         } else {
             alert('There was an error sending your message. Please try again.');
         }
@@ -258,6 +286,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 </script>
+
 
 </body>
 </html>

@@ -10,27 +10,26 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            padding-top: -10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+	    top: -10;
         }
 
         .logo {
-            max-width: 30%;
+            max-width: 17%;
             height: auto;
             margin: 0 auto;
             display: block;
+	    margin-bottom: -5px;
         }
 
         .menu {
@@ -38,6 +37,7 @@
             padding: 0;
             margin-top: -5px;
             display: flex;
+            justify-content: center;
         }
 
         .menu li {
@@ -47,7 +47,7 @@
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-size: 14px; /* Adjust the font size as needed */
         }
 
         .menu li a:hover {
@@ -83,6 +83,16 @@
 
         .dropdown-content a:hover {
             background-color: #ddd;
+        }
+
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+            cursor: pointer;
         }
 
         .contact-title {
@@ -210,8 +220,8 @@
             <a href="#" class="dropbtn">Our Products</a>
             <div class="dropdown-content">
                 <a href="thefounder.html">Our Rugs</a>
-                <a href="ragapparel.html">Ragrugz Apparel</a>
-                <a href="theragstory.html">The Rug Purse</a>
+                <a href="https://store.ragrugz.com/">Ragrugz Apparel</a>
+                <a href="theragpurse.html">The Rug Purse</a>
             </div>
         </li>
 
@@ -226,7 +236,7 @@
         <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <h2 class="contact-title">Send Us Your Custom Design</h2>
-    <form id="contact-form" class="contact-form" method="post" enctype="multipart/form-data" action="https://script.google.com/macros/s/AKfycbyg1B51vFFhlUc7FXeVi8y2WuFjQ4JU-CqyqU91nq47HP6ptMH1LK5fWIiVuy916nEGVw/exec">
+    <form id="contact-form" class="contact-form" method="post" enctype="multipart/form-data" action="https://script.google.com/macros/s/AKfycbz-KIqghvAmSFE_XwFiUxmHOMRbbZ8H_oKMN_YRTdrnxF505jTKsCX8auGBW9IrAN-e/exec">
         <div class="form-group form-group-inline">
             <div class="form-group">
                 <label for="first-name"><strong>First Name</strong></label>
@@ -253,7 +263,7 @@
             <label for="design"><strong>Upload Your Design</strong></label>
             <input type="file" id="design" name="design" required>
         </div>
-	<p class="measure-text"><strong>Please ensure your dimensions are inches.</strong></p>
+        <p class="measure-text"><strong>Please ensure your dimensions are inches.</strong></p>
         <div class="form-group form-group-inline">
             <div class="form-group">
                 <label for="height"><strong>Height</strong></label>
@@ -273,43 +283,56 @@
                 </label>
                 <label class="shape-btn">
                     <input type="radio" name="shape" value="Triangle" required>
-                    <img src="https://i.ibb.co/GF3nHmf/triangle.png" alt="Square Shape" class="shape-img">
+                    <img src="https://i.ibb.co/GF3nHmf/triangle.png" alt="Triangle Shape" class="shape-img">
                 </label>
                 <label class="shape-btn">
-                    <input type="radio" name="shape" value="Triangle" required>
-                    <img src="https://i.ibb.co/cvXqm1q/square.png" alt="Rectangle Shape" class="shape-img">
+                    <input type="radio" name="shape" value="Square" required>
+                    <img src="https://i.ibb.co/cvXqm1q/square.png" alt="Square Shape" class="shape-img">
                 </label>
-
             </div>
         </div>
         <button type="submit" class="submit-btn">Submit</button>
     </form>
-    <p class="address"><strong>Experiment Projects LLC</strong>
+    <p class="address"><strong>Experiment Projects LLC</strong></p>
 </div>
 
-    <script>
-        // Function to display the popup message
-        function displayPopup() {
-            alert("Thank you for your custom design submission. We have received your design and will get back to you within 24 to 48 hours.\n\n" +
-                   "Best regards,\n" +
-                   "Ragrugz Team");
-        }
-
-        // Wait for the document to fully load
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get the form element
-            var form = document.getElementById("contact-form");
-
-            // Add an event listener for the form submission
-            form.addEventListener("submit", function(event) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-                
-                // Display the popup message
-                displayPopup();
-            });
+<a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
+<script>
+    document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
         });
-    </script>
+    });
 
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const dropdownContent = this.querySelector('.dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Function to display the popup message
+    function displayPopup() {
+        alert("Thank you for your custom design submission. We have received your design and will get back to you within 24 to 48 hours.\n\n" +
+               "Best regards,\n" +
+               "Ragrugz Team");
+    }
+
+    // Wait for the document to fully load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the form element
+        var form = document.getElementById("contact-form");
+
+        // Add an event listener for the form submission
+        form.addEventListener("submit", function(event) {
+            // Display the popup message
+            displayPopup();
+        });
+    });
+</script>
 </body>
 </html>

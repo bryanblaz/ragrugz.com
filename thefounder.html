@@ -91,26 +91,29 @@
         }
 
         .logo {
-            max-width: 13%;
+            max-width: 17%;
             height: auto;
-            margin-bottom: -5px;
+            margin: 0 auto;
+            display: block;
+	    margin-bottom: -5px;
         }
 
         .menu {
             list-style-type: none;
-            padding: 0px;
-            margin-top: 0;
+            padding: 0;
+            margin-top: -5px;
+            display: flex;
+            justify-content: center;
         }
 
         .menu li {
-            display: inline;
             margin-right: 10px;
         }
 
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-size: 14px; /* Adjust the font size as needed */
         }
 
         .menu li a:hover {
@@ -252,7 +255,7 @@
                 <a href="#" class="dropbtn">Our Products</a>
                 <div class="dropdown-content">
                     <a href="thefounder.html">Our Rugs</a>
-                    <a href="ragapparel.html">Ragrugz Apparel</a>
+                    <a href="https://store.ragrugz.com/">Ragrugz Apparel</a>
                     <a href="therugpurse.html">The Rug Purse</a>
                 </div>
             </li>
@@ -322,6 +325,26 @@
     <p></p>
     <p></a></p>
 </div>
+
+<script>
+document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const dropdownContent = this.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+</script>
 
 </body>
 </html>

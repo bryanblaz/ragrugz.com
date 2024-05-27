@@ -80,6 +80,16 @@
             background-color: #ddd;
         }
 
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+            cursor: pointer;
+        }
+
         /* Footer Styles */
         .footer {
             background-color: #fff;
@@ -136,6 +146,10 @@
                 position: static;
                 padding: 10px 0;
             }
+
+            .cart-icon {
+                width: 40px; /* Adjust size for mobile */
+            }
         }
     </style>
 </head>
@@ -149,8 +163,8 @@
                 <a href="#" class="dropbtn">Our Products</a>
                 <div class="dropdown-content">
                     <a href="thefounder.html">Our Rugs</a>
-                    <a href="ragapparel.html">Ragrugz Apparel</a>
-                    <a href="theragstory.html">The Rug Purse</a>
+                    <a href="https://store.ragrugz.com/">Ragrugz Apparel</a>
+                    <a href="theragpurse.html">The Rug Purse</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -165,9 +179,30 @@
         </ul>
     </div>
 
+    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
+
     <div class="footer">
         <p>&copy; 2024 Experiment Projects. All Rights Reserved.</p>
         <p>Designed by <a href="thefounder.html" target="_blank">Bryan Anderson</a></p>
     </div>
+
+<script>
+document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const dropdownContent = this.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
 </body>
 </html>
