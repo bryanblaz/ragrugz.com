@@ -24,7 +24,7 @@
 
         .logo {
             max-width: 30%;
-            height: auto;
+            height: auto; /* Adjusted to auto to maintain aspect ratio */
             margin-bottom: 0;
         }
 
@@ -42,13 +42,14 @@
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-size: 14px; /* Adjust the font size as needed */
         }
 
         .menu li a:hover {
             color: #555;
         }
 
+        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
@@ -79,13 +80,17 @@
             background-color: #ddd;
         }
 
+        /* Cart Icon Styles */
         .cart-icon {
             position: fixed;
             top: 20px;
             right: 20px;
+            width: 30px; /* Adjust size as needed */
+            height: auto;
             cursor: pointer;
         }
 
+        /* Footer Styles */
         .footer {
             background-color: #fff;
             padding: 20px 0;
@@ -105,6 +110,7 @@
             color: #555;
         }
 
+        /* Responsive Styles */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -142,7 +148,7 @@
             }
 
             .cart-icon {
-                width: 40px;
+                width: 40px; /* Adjust size for mobile */
             }
         }
     </style>
@@ -173,72 +179,30 @@
         </ul>
     </div>
 
-    <!-- Cart Button Container -->
-    <div id="cart-button-container" class="cart-icon"></div>
+    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
 
     <div class="footer">
         <p>&copy; 2024 Experiment Projects. All Rights Reserved.</p>
         <p>Designed by <a href="thefounder.html" target="_blank">Bryan Anderson</a></p>
     </div>
 
-    <!-- Include Shopify's Buy Button Script -->
-    <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
-    <script>
-        (function() {
-            var client = ShopifyBuy.buildClient({
-                domain: 'store.ragrugz.com',
-                storefrontAccessToken: '62bb378deb30532b4f3f9139e793f78a',
-            });
+<script>
+document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+});
 
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-                ui.createComponent('cart', {
-                    node: document.getElementById('cart-button-container'),
-                    options: {
-                        cart: {
-                            startOpen: false,
-                            popup: false,
-                            styles: {
-                                button: {
-                                    'background-color': '#000',
-                                    ':hover': {
-                                        'background-color': '#555'
-                                    },
-                                    ':focus': {
-                                        'background-color': '#555'
-                                    }
-                                }
-                            }
-                        },
-                        toggle: {
-                            sticky: false,
-                            contents: {
-                                count: true,
-                                icon: true
-                            },
-                            styles: {
-                                toggle: {
-                                    'background-color': '#fff',
-                                    ':hover': {
-                                        'background-color': '#ddd'
-                                    },
-                                    ':focus': {
-                                        'background-color': '#ddd'
-                                    }
-                                },
-                                count: {
-                                    'background-color': '#f8e71c',
-                                    'color': '#000',
-                                    'font-size': '12px'
-                                },
-                                icon: {
-                                    'fill': '#000'
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-        })();
-    </script>
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const dropdownContent = this.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
 </body>
 </html>
