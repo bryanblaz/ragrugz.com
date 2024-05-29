@@ -10,33 +10,28 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #fff;
+            background-color: #f2f2f2;
         }
 
         .container {
-            text-align: center;
-            margin-top: 0;
-            padding-top: -10px;
-            width: 100%;
-            box-sizing: border-box;
-            position: fixed;
-            top: -10px; /* Corrected the value here */
-            left: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             background-color: #fff;
-            z-index: 999;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo {
-            max-width: 17%;
+            max-width: 25%;
             height: auto;
             margin: 0 auto;
             display: block;
-            margin-bottom: -5px;
+	    margin-bottom: -5px;
         }
 
         .menu {
@@ -97,45 +92,18 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            width: 30px; /* Adjust size as needed */
+            width: 30px;
             height: auto;
             cursor: pointer;
         }
 
         .main-content {
-            margin-top: 100px;
+            margin-top: 20px; /* Adjusted margin-top for better spacing */
             padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            text-align: center; /* Center aligning the text */
+            width: 100%; /* Adjusted width to fill the container */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+            text-align: center;
             line-height: 1.6;
-        }
-
-        .center-content {
-            text-align: center;
-        }
-
-        .footer {
-            background-color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            width: 10%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .footer-image {
-            max-width: 10%;
-            height: auto;
-            display: block;
-            margin: 20px auto; /* Center the image horizontally */
-        }
-
-        .footer-image1 {
-            max-width: 30%;
-            height: auto;
-            display: block;
-            margin: 20px auto; /* Center the image horizontally */
         }
 
         .address {
@@ -145,12 +113,34 @@
         }
 
         @media (max-width: 600px) {
-            .main-content {
-                margin-top: 120px;
-                padding: 10px;
-                width: 95%;
+            .menu li {
+                margin-right: 10px; /* Adjusted margin for smaller screens */
             }
-        }
+
+
+    .main-content {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
+    .foot-image {
+        max-width: 10%; /* Adjust the value as needed to change the size */
+        height: auto;
+        display: block;
+        margin: 2px auto; /* Center the image horizontally */
+    }
+}
+Ensure that the .foot-image class is correctly applied to the images in your HTML. With this correction, the size of the foot images should change appropriately.
+
+
+
+
+
+
+rgin: 2px auto; /* Center the image horizontally */
+}
+
+
     </style>
 </head>
 <body>
@@ -178,7 +168,7 @@
         </ul>
     </div>
 
-    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
+    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
 
     <div class="main-content">
         <p><strong>The Rag Story</strong></p>
@@ -186,20 +176,20 @@
 
         <br>
         <p><strong>The Colors of Creativity and Connection</strong></p>
-        <img src="https://i.ibb.co/rw2jycZ/blue-ballon.png" alt="Footer Image" class="footer-image">
+        <img src="https://i.ibb.co/rw2jycZ/blue-ballon.png" alt="Foot Image" class="foot-image">
         <p><strong>Blue</strong>: The blue circle in our logo symbolizes trust, wisdom, and stability. It is a nod to the endless sky and vast oceans, representing the boundless creativity that Ragrugz embodies. Blue is a color that encourages calm and inspires confidence, reflecting our commitment to quality and our dedication to building a brand that customers can rely on.</p>
         <br>
-        <img src="https://i.ibb.co/MVJVzNX/yellow-ballon.png" alt="Footer Image" class="footer-image">
+        <img src="https://i.ibb.co/MVJVzNX/yellow-ballon.png" alt="Foot Image" class="foot-image">
         <p><strong>Yellow</strong>: The yellow circle stands for happiness, energy, and optimism. It captures the warmth of the sun, bringing a sense of joy and brightness to our logo. Yellow is the color of creativity and intellectual energy, embodying the innovative spirit that drives Ragrugz to continually push the boundaries of design and craftsmanship.</p>
         <br>
-        <img src="https://i.ibb.co/2MzGQFs/green-ballon.png" alt="Footer Image" class="footer-image">
+        <img src="https://i.ibb.co/2MzGQFs/green-ballon.png" alt="Foot Image" class="foot-image">
         <p><strong>Green</strong>: The green circle represents growth, harmony, and freshness. Green is the color of nature, symbolizing the organic and sustainable practices that are at the heart of our company's values. It also signifies new beginnings and the constant evolution of our product lines, from bespoke rugs to unique apparel and accessories.</p>
         <br>
-        <img src="https://i.ibb.co/VDns5Y0/red-ballon.png" alt="Footer Image" class="footer-image">
+        <img src="https://i.ibb.co/VDns5Y0/red-ballon.png" alt="Foot Image" class="foot-image">
         <p><strong>Red</strong>: The red square, distinct in its shape and color, stands for passion, energy, and action. Red is the color of fire and love, representing the fervent enthusiasm and dedication we pour into every piece we create. It signifies the bold steps we take to innovate and lead in our industry, always with a fiery drive to excel.</p>
 
         <br><br><br>
-        <p><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Footer Image1" class="footer-image1"></p>
+        <p><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Foot Image" class="foot-image"></p>
         <p><strong>The Shapes of Unity and Innovation</strong></p>
         <p><strong>Circles</strong>: The circular shapes in our logo are more than just pleasing to the eye—they represent unity, wholeness, and inclusion. Circles have no beginning or end, symbolizing the endless potential and continuous cycle of creativity at Ragrugz. They remind us that every product we create is part of a larger story, one that includes our team, our customers, and the broader community.</p>
         <p><strong><i>The Essence of Ragrugz</i></strong></p>
@@ -212,27 +202,7 @@
         </div>
     </div>
 
-    <p class="address"><strong>Experiment Projects LLC</strong></p>
-
- <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
-
-    <script>
-        document.addEventListener('click', function(event) {
-            const dropdowns = document.querySelectorAll('.dropdown-content');
-            dropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
-                    dropdown.style.display = 'none';
-                }
-            });
-        });
-
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.addEventListener('click', function(event) {
-                event.stopPropagation();
-                const dropdownContent = this.querySelector('.dropdown-content');
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+          <p class="address"><strong>Experiment Projects LLC</strong></p>
+    </div>
 </body>
 </html>
