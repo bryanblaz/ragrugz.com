@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ragrugz</title>
+    <title>The Rag Story - RagRugz™</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -16,7 +16,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px; /* Reduced padding */
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@
             height: auto;
             margin: 0 auto;
             display: block;
-	    margin-bottom: -5px;
+            margin-bottom: -5px;
         }
 
         .menu {
@@ -87,7 +87,7 @@
         /* Cart Icon Styles */
         .cart-icon {
             position: fixed;
-            top: 20px;
+            top: 10px; /* Adjusted top position */
             right: 20px;
             width: 30px;
             height: auto;
@@ -95,8 +95,8 @@
         }
 
         .main-content {
-            margin-top: 20px; /* Adjusted margin-top for better spacing */
-            padding: 20px;
+            margin-top: 10px; /* Reduced margin-top */
+            padding: 10px; /* Reduced padding */
             width: 100%; /* Adjusted width to fill the container */
             box-sizing: border-box; /* Ensure padding is included in the width */
             text-align: center;
@@ -106,7 +106,7 @@
         .address {
             font-size: 16px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px; /* Reduced margin-top */
         }
 
         @media (max-width: 600px) {
@@ -114,23 +114,18 @@
                 margin-right: 10px; /* Adjusted margin for smaller screens */
             }
 
+            .main-content {
+                margin-top: 80px; /* Adjusted margin-top for smaller screens */
+                padding: 10px;
+            }
+        }
 
-    .main-content {
-        margin-top: 120px;
-        padding: 10px;
-    }
-
-    .foot-image {
-        max-width: 10%; /* Adjust the value as needed to change the size */
-        height: auto;
-        display: block;
-        margin: 2px auto; /* Center the image horizontally */
-    }
-}
-Ensure that the .foot-image class is correctly applied to the images in your HTML. With this correction, the size of the foot images should change appropriately.
-
-
-
+        .foot-image {
+            max-width: 10%; /* Adjust the value as needed to change the size */
+            height: auto;
+            display: block;
+            margin: 2px auto; /* Center the image horizontally */
+        }
     </style>
 </head>
 <body>
@@ -138,8 +133,7 @@ Ensure that the .foot-image class is correctly applied to the images in your HTM
         <a href="https://store.ragrugz.com/"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
-
-                      <li class="dropdown">
+            <li class="dropdown">
                 <a href="#" class="dropbtn">Our Products</a>
                 <div class="dropdown-content">
                     <a href="https://store.ragrugz.com/pages/our-rugs">Our Rugs</a>
@@ -157,7 +151,6 @@ Ensure that the .foot-image class is correctly applied to the images in your HTM
             <li><a href="https://store.ragrugz.com/pages/custom-order">Custom Order</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
-
     </div>
 
     <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
@@ -194,7 +187,6 @@ Ensure that the .foot-image class is correctly applied to the images in your HTM
         </div>
     </div>
 
-          <p class="address"><strong>Experiment Projects LLC</strong></p>
-    </div>
+    <p class="address"><strong>Experiment Projects LLC</strong></p>
 </body>
 </html>
