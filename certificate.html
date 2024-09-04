@@ -6,81 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RagRugz™</title>
     <style>
-body {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    flex-direction: column;
-}
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Change font-family to Courier New */
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+        }
 
-.container {
-    text-align: center;
-    margin-top: 20px;
-    width: 100%;
-}
+        .logo {
+            max-width: 25%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+	    margin-bottom: -5px;
+        }
 
-.logo {
-    max-width: 10%;
-    height: auto;
-    margin-bottom: 10px;
-}
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin-top: -5px;
+            display: flex;
+            justify-content: center;
+        }
 
-.menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
+        .menu li {
+            margin-right: 10px;
+        }
 
-.menu li {
-    display: inline-block;
-    margin-right: 10px; /* Increased margin for spacing */
-}
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px; /* Adjust the font size as needed */
+        }
 
-.menu li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-}
+        .menu li a:hover {
+            color: #555;
+        }
 
-.menu li a:hover {
-    color: #555;
-}
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
 
-.dropdown {
-    position: relative;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; /* Changed background color to black */
+            color: #fff !important; /* Changed font color to white and added !important */
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #000;
-    color: #fff !important;
-    min-width: 160px;
-    z-index: 1;
-    top: 100%;
-    left: 0;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        .dropdown-content a {
+            color: #fff !important; /* Changed font color to white and added !important */
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+            text-decoration: none;
+        }
 
-.dropdown-content a {
-    color: #fff !important;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #333;
-}
+        .dropdown-content a:hover {
+            background-color: #333; /* Adjusted hover background color */
+        }
 
 .pdf-viewer {
     display: flex;
