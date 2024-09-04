@@ -13,45 +13,44 @@
             background-color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align items to start from the top */
-            min-height: 100vh; /* Make sure body covers the entire viewport height */
-            flex-direction: column; /* Stack elements vertically */
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
         }
 
         .container {
             text-align: center;
-            margin-top: 20px; /* Adjust margin to move the container down slightly */
+            margin-top: 20px;
             width: 100%;
         }
 
         .logo {
             max-width: 10%;
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 10px; /* Space between logo and menu */
+            height: auto;
+            margin-bottom: 10px;
         }
 
         .menu {
             list-style-type: none;
             padding: 0;
-            margin: 0 0 20px 0; /* Adjust margin for spacing */
+            margin: 0 0 20px 0;
         }
 
         .menu li {
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 2px;
         }
 
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px; /* Adjust the font size as needed */
+            font-size: 14px;
         }
 
         .menu li a:hover {
             color: #555;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
@@ -59,8 +58,8 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #000; /* Changed background color to black */
-            color: #fff !important; /* Changed font color to white and added !important */
+            background-color: #000;
+            color: #fff !important;
             min-width: 160px;
             z-index: 1;
             top: 100%;
@@ -72,7 +71,7 @@
         }
 
         .dropdown-content a {
-            color: #fff !important; /* Changed font color to white and added !important */
+            color: #fff !important;
             padding: 12px 16px;
             display: block;
             text-align: left;
@@ -80,41 +79,39 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #333; /* Adjusted hover background color */
+            background-color: #333;
         }
 
-        /* PDF Viewer Styles */
         .pdf-viewer {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 5px;
+            width: 100%; /* Ensure the container spans the full width */
         }
 
         .pdf-viewer iframe {
-            width: 80%; /* Adjust width as needed */
-            height: 600px;
+            width: 80%;
+            height: 650px;
             border: none;
         }
 
-        /* Cart Icon Styles */
         .cart-icon {
             position: fixed;
             top: 20px;
             right: 20px;
-            width: 30px; /* Adjust size as needed */
+            width: 30px;
             height: auto;
             cursor: pointer;
         }
 
-        /* Footer Styles */
         .footer {
             background-color: #fff;
             padding: 20px 0;
             text-align: center;
             width: 100%;
             font-size: 12px;
-            margin-top: auto; /* Pushes the footer to the bottom */
+            margin-top: auto;
         }
 
         .footer a {
@@ -126,7 +123,6 @@
             color: #555;
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             body {
                 align-items: center;
@@ -158,11 +154,11 @@
 
             .pdf-viewer iframe {
                 width: 100%;
-                height: 500px;
+                height: 400px;
             }
 
             .cart-icon {
-                width: 40px; /* Adjust size for mobile */
+                width: 40px;
             }
         }
     </style>
@@ -196,11 +192,11 @@
         </ul>
 
         <div class="pdf-viewer">
-            <iframe src="https://github.com/bryanblaz/ragrugz/blob/dd5291a4d878f7ea1cf4ba5127eae3179523dd9a/images/RAGRUGZ%20Certificate%20of%20Authenticity.pdf"></iframe>
+            <iframe src="https://drive.google.com/file/d/1D2zauDu2gL7A2xNhU-t3eH6d22HV0Ain/preview"></iframe>
         </div>
     </div>
 
-    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
+    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
 
     <div class="footer">
         <p>&copy; 2024 Experiment Projects. All Rights Reserved.</p>
