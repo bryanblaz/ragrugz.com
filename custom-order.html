@@ -237,104 +237,33 @@
         <li><a href="custom-order.html">Custom Order</a></li>
         <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <h2 class="contact-title">Send Us Your Custom Design</h2>
-    <form id="contact-form" class="contact-form" method="post" enctype="multipart/form-data" action="https://script.google.com/macros/s/AKfycbz-KIqghvAmSFE_XwFiUxmHOMRbbZ8H_oKMN_YRTdrnxF505jTKsCX8auGBW9IrAN-e/exec">
-        <div class="form-group form-group-inline">
-            <div class="form-group">
-                <label for="first-name"><strong>First Name</strong></label>
-                <input type="text" id="first-name" name="first_name" required placeholder="First name">
-            </div>
-            <div class="form-group">
-                <label for="last-name"><strong>Last Name</strong></label>
-                <input type="text" id="last-name" name="last_name" required placeholder="Last name">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="email"><strong>Email</strong></label>
-            <input type="email" id="email" name="email" required placeholder="Email address">
-        </div>
-        <div class="form-group">
-            <label for="phone"><strong>Phone Number</strong></label>
-            <input type="phone" id="phone" name="phone" required placeholder="(###)###-####">
-        </div>
-        <div class="form-group">
-            <label for="message"><strong>Message</strong></label>
-            <textarea id="message" name="message" required placeholder="Explain to us what would you like?"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="design"><strong>Upload Your Design</strong></label>
-            <input type="file" id="design" name="design" required>
-        </div>
-        <p class="measure-text"><strong>Please ensure your dimensions are inches.</strong></p>
-        <div class="form-group form-group-inline">
-            <div class="form-group">
-                <label for="height"><strong>Height</strong></label>
-                <input type="text" id="height" name="height" required placeholder="Inches">
-            </div>
-            <div class="form-group">
-                <label for="width"><strong>Width</strong></label>
-                <input type="text" id="width" name="width" required placeholder="Inches">
-            </div>
-        </div>
-        <div class="form-group">
-            <label><strong>Shape</strong></label>
-            <div class="shape-buttons">
-                <label class="shape-btn">
-                    <input type="radio" name="shape" value="Circle" required>
-                    <img src="https://i.ibb.co/3p4qGp7/circle.png" alt="Circle Shape" class="shape-img">
-                </label>
-                <label class="shape-btn">
-                    <input type="radio" name="shape" value="Triangle" required>
-                    <img src="https://i.ibb.co/GF3nHmf/triangle.png" alt="Triangle Shape" class="shape-img">
-                </label>
-                <label class="shape-btn">
-                    <input type="radio" name="shape" value="Square" required>
-                    <img src="https://i.ibb.co/cvXqm1q/square.png" alt="Square Shape" class="shape-img">
-                </label>
-            </div>
-        </div>
-        <button type="submit" class="submit-btn">Submit</button>
+</head>
+<body>
+  <div class="container">
+    <h2>Customize Your Product</h2>
+
+    <!-- Product Mockup / Printify Embed -->
+    <div id="printify-product">
+      <p>Product preview will load here…</p>
+    </div>
+
+    <!-- Upload Artwork -->
+    <form id="custom-order-form">
+      <div class="form-group">
+        <label for="artwork">Upload Your Artwork</label>
+        <input type="file" id="artwork" name="artwork" required>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Additional Notes</label>
+        <input type="text" id="notes" name="notes" placeholder="Anything you'd like us to know?">
+      </div>
+
+      <button type="submit" class="submit-btn">Checkout</button>
     </form>
-    <p class="address"><strong>Experiment Projects LLC</strong></p>
-</div>
+  </div>
 
-<a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a> <!-- Cart Icon -->
-<script>
-    document.addEventListener('click', function(event) {
-        const dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(dropdown => {
-            if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
-                dropdown.style.display = 'none';
-            }
-        });
-    });
-
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        dropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
-            const dropdownContent = this.querySelector('.dropdown-content');
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-    });
-
-    // Function to display the popup message
-    function displayPopup() {
-        alert("Thank you for your custom design submission. We have received your design and will get back to you within 24 to 48 hours.\n\n" +
-               "Best regards,\n" +
-               "Ragrugz Team");
-    }
-
-    // Wait for the document to fully load
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get the form element
-        var form = document.getElementById("contact-form");
-
-        // Add an event listener for the form submission
-        form.addEventListener("submit", function(event) {
-            // Display the popup message
-            displayPopup();
-        });
-    });
-</script>
+  <!-- External JS -->
+  <script src="order.js"></script>
 </body>
 </html>
