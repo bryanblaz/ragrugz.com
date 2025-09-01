@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #fff;
             min-height: 100vh;
+            overflow: hidden; /* 🚫 disable main page scroll */
         }
 
         .container {
@@ -92,54 +93,18 @@
             width: 100%;
         }
 
-        /* Floating Cart Button */
-        #floating-cart {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #ff6f61;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 9999;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+        /* Full-screen iframe container */
+        #iframe-container {
+            position: relative;
+            width: 100%;
+            height: 90vh; /* fills viewport */
         }
 
-        #floating-cart:hover {
-            transform: scale(1.1);
-        }
-
-        #floating-cart img {
-            width: 30px;
-            height: 30px;
-        }
-
-        /* Cart count badge */
-        #cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: #000;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.2s;
-        }
-
-        /* Pop animation for badge */
-        .pop {
-            transform: scale(1.5);
+        #printifyIframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
     </style>
 </head>
@@ -172,41 +137,14 @@
     </ul>
 </div>
 
-
-<div style="max-width: 1040px; margin: 0 auto;">
-  <a class="anchor" id="printifyAnchor"></a>
-
-  <!-- Printify storefront -->
+<!-- Fullscreen iframe wrapper -->
+<div id="iframe-container">
   <iframe 
     id="printifyIframe"
-    frameborder="0"
-    scrolling="yes"
     src="https://ragrugz.printify.me/"
-    width="100%"
-    style="border: none; min-height: 2000px;">
+    scrolling="yes">
   </iframe>
-
-  <style>
-    /* Responsive iframe heights */
-    #printifyIframe {
-      width: 100%;
-      min-height: 2000px;
-    }
-    @media (max-width: 1024px) {
-      #printifyIframe { min-height: 2200px; }
-    }
-    @media (max-width: 768px) {
-      #printifyIframe { min-height: 2500px; }
-    }
-    @media (max-width: 480px) {
-      #printifyIframe { min-height: 3000px; }
-    }
-  </style>
 </div>
-
-
-
-
 
 </body>
 </html>
