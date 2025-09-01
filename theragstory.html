@@ -16,10 +16,10 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 10px; /* Reduced padding */
+            padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,14 +49,13 @@
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px; /* Adjust the font size as needed */
+            font-size: 14px;
         }
 
         .menu li a:hover {
             color: #555;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
@@ -64,8 +63,8 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #000; /* Changed background color to black */
-            color: #fff !important; /* Changed font color to white and added !important */
+            background-color: #000;
+            color: #fff !important;
             min-width: 160px;
             z-index: 1;
             top: 100%;
@@ -77,17 +76,20 @@
         }
 
         .dropdown-content a {
-            color: #fff !important; /* Changed font color to white and added !important */
+            color: #fff !important;
             padding: 12px 16px;
             display: block;
             text-align: left;
             text-decoration: none;
         }
 
-        /* Cart Icon Styles */
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
         .cart-icon {
             position: fixed;
-            top: 10px; /* Adjusted top position */
+            top: 20px;
             right: 20px;
             width: 30px;
             height: auto;
@@ -95,99 +97,128 @@
         }
 
         .main-content {
-            margin-top: 10px; /* Reduced margin-top */
-            padding: 10px; /* Reduced padding */
-            width: 100%; /* Adjusted width to fill the container */
-            box-sizing: border-box; /* Ensure padding is included in the width */
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
             text-align: center;
             line-height: 1.6;
+        }
+
+        .center-content {
+            text-align: left;
+            margin: 10px 0;
         }
 
         .address {
             font-size: 16px;
             text-align: center;
-            margin-top: 10px; /* Reduced margin-top */
+            margin-top: 20px;
+        }
+
+        .foot-image {
+            max-width: 15%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
         }
 
         @media (max-width: 600px) {
             .menu li {
-                margin-right: 10px; /* Adjusted margin for smaller screens */
+                margin-right: 10px;
             }
 
             .main-content {
-                margin-top: 80px; /* Adjusted margin-top for smaller screens */
+                margin-top: 80px;
                 padding: 10px;
             }
-        }
-
-        .foot-image {
-            max-width: 10%; /* Adjust the value as needed to change the size */
-            height: auto;
-            display: block;
-            margin: 2px auto; /* Center the image horizontally */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://store.ragrugz.com/"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
+        <a href="https://store.ragrugz.com/">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" 
+                 alt="Logo" class="logo">
+        </a>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Our Products</a>
                 <div class="dropdown-content">
-                    <a href="https://store.ragrugz.com/pages/our-rugs">Our Rugs</a>
-                    <a href="https://store.ragrugz.com/">RagRugz Apparel</a>
-                    <a href="https://store.ragrugz.com/pages/the-rug-purse">The Rug Purse</a>
+                    <a href="ourrags.html">Our Rugs</a>
+                    <a href="ragrugapparel.html">RagRugz Apparel</a>
+                    <a href="#">The Rug Purse</a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">About Us</a>
                 <div class="dropdown-content">
-                    <a href="https://store.ragrugz.com/pages/the-founder">The Founder</a>
+                    <a href="thefounder.html">The Founder</a>
                     <a href="theragstory.html">The Rag Story</a>
                 </div>
             </li>
-            <li><a href="https://store.ragrugz.com/pages/custom-order">Custom Order</a></li>
+            <li><a href="custom-order.html">Custom Order</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-	     <li><a href="https://store.ragrugz.com/pages/faq">FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li>
         </ul>
+
+        <div class="main-content">
+            <p><strong>The Rag Story</strong></p>
+            <p>Ragrugz™ was more than just a design decision—it was an expression of the essence of the company, a visual representation of its values, creativity, and vision. The colors and shapes that make up the Ragrugz logo are a tapestry of meaning, woven together to tell a story of inspiration, innovation, and community.</p>
+
+            <p><strong>The Colors of Creativity and Connection</strong></p>
+            <img src="https://i.ibb.co/rw2jycZ/blue-ballon.png" alt="Blue" class="foot-image">
+            <p><strong>Blue</strong>: Trust, wisdom, stability; representing creativity and reliability.</p>
+            
+            <img src="https://i.ibb.co/MVJVzNX/yellow-ballon.png" alt="Yellow" class="foot-image">
+            <p><strong>Yellow</strong>: Happiness, energy, optimism; symbolizing joy and innovation.</p>
+            
+            <img src="https://i.ibb.co/2MzGQFs/green-ballon.png" alt="Green" class="foot-image">
+            <p><strong>Green</strong>: Growth, harmony, and freshness; highlighting sustainability and evolution.</p>
+            
+            <img src="https://i.ibb.co/VDns5Y0/red-ballon.png" alt="Red" class="foot-image">
+            <p><strong>Red</strong>: Passion, energy, action; embodying dedication and boldness.</p>
+
+            <p><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo Balloons" class="foot-image"></p>
+            <p><strong>The Shapes of Unity and Innovation</strong></p>
+            <p><strong>Circles</strong>: Represent unity, wholeness, and inclusion, symbolizing endless creativity.</p>
+
+            <p><strong><i>The Essence of Ragrugz</i></strong></p>
+            <div class="center-content">
+                <p><strong>Creativity</strong>: Blue and yellow represent innovation and joy.</p>
+                <p><strong>Community</strong>: Green symbolizes sustainable practices and connection to nature.</p>
+                <p><strong>Passion</strong>: Red embodies the drive and enthusiasm of our brand.</p>
+                <p><strong>Balance and Harmony</strong>: The interplay of colors and shapes reflects the harmony in our designs.</p>
+            </div>
+        </div>
+
+        <p class="address"><strong>Experiment Projects LLC</strong></p>
+        <div>
+            <a href="index.html"><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo" class="foot-image"></a>
+        </div>
     </div>
 
     <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
 
-    <div class="main-content">
-        <p><strong>The Rag Story</strong></p>
-        <p>Ragrugz™ was more than just a design decision—it was an expression of the essence of the company, a visual representation of its values, creativity, and vision. The colors and shapes that make up the Ragrugz logo are a tapestry of meaning, woven together to tell a story of inspiration, innovation, and community.</p>
+    <script>
+        // Dropdown click toggle
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+                    dropdown.style.display = 'none';
+                }
+            });
+        });
 
-        <br>
-        <p><strong>The Colors of Creativity and Connection</strong></p>
-        <img src="https://i.ibb.co/rw2jycZ/blue-ballon.png" alt="Foot Image" class="foot-image">
-        <p><strong>Blue</strong>: The blue circle in our logo symbolizes trust, wisdom, and stability. It is a nod to the endless sky and vast oceans, representing the boundless creativity that Ragrugz embodies. Blue is a color that encourages calm and inspires confidence, reflecting our commitment to quality and our dedication to building a brand that customers can rely on.</p>
-        <br>
-        <img src="https://i.ibb.co/MVJVzNX/yellow-ballon.png" alt="Foot Image" class="foot-image">
-        <p><strong>Yellow</strong>: The yellow circle stands for happiness, energy, and optimism. It captures the warmth of the sun, bringing a sense of joy and brightness to our logo. Yellow is the color of creativity and intellectual energy, embodying the innovative spirit that drives Ragrugz to continually push the boundaries of design and craftsmanship.</p>
-        <br>
-        <img src="https://i.ibb.co/2MzGQFs/green-ballon.png" alt="Foot Image" class="foot-image">
-        <p><strong>Green</strong>: The green circle represents growth, harmony, and freshness. Green is the color of nature, symbolizing the organic and sustainable practices that are at the heart of our company's values. It also signifies new beginnings and the constant evolution of our product lines, from bespoke rugs to unique apparel and accessories.</p>
-        <br>
-        <img src="https://i.ibb.co/VDns5Y0/red-ballon.png" alt="Foot Image" class="foot-image">
-        <p><strong>Red</strong>: The red square, distinct in its shape and color, stands for passion, energy, and action. Red is the color of fire and love, representing the fervent enthusiasm and dedication we pour into every piece we create. It signifies the bold steps we take to innovate and lead in our industry, always with a fiery drive to excel.</p>
-
-        <br><br><br>
-        <p><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Foot Image" class="foot-image"></p>
-        <p><strong>The Shapes of Unity and Innovation</strong></p>
-        <p><strong>Circles</strong>: The circular shapes in our logo are more than just pleasing to the eye—they represent unity, wholeness, and inclusion. Circles have no beginning or end, symbolizing the endless potential and continuous cycle of creativity at Ragrugz. They remind us that every product we create is part of a larger story, one that includes our team, our customers, and the broader community.</p>
-        <p><strong><i>The Essence of Ragrugz</i></strong></p>
-        <p>The Ragrugz logo is a celebration of our journey—from the initial spark of an idea to the thriving business we are today. Each color and shape has been thoughtfully chosen to reflect the core of our identity:</p>
-        <div class="center-content">
-            <p><strong>Creativity</strong>: Blue and yellow speak to our innovative approach and the joy we find in the creative process.</p>
-            <p><strong>Community</strong>: Green represents our commitment to sustainable practices and our connection to nature.</p>
-            <p><strong>Passion</strong>: Red embodies the fervor and drive that fuel our brand.</p>
-            <p><strong>Balance and Harmony</strong>: The interplay of these colors and shapes symbolizes the balance we strive for in our designs and in our business.</p>
-        </div>
-    </div>
-
-    <p class="address"><strong>Experiment Projects LLC</strong></p>
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const dropdownContent = this.querySelector('.dropdown-content');
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 </html>
