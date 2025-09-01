@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
+    <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - Ragrugz</title>
     <style>
@@ -17,31 +17,17 @@
         .container {
             text-align: center;
             margin: 0 auto;
-            padding-top: -10px;
             width: 100%;
             box-sizing: border-box;
             background-color: #fff;
-	    top: -10;
         }
-
-
-.product {
-    display: inline-block;
-    width: 45%; /* Adjust width as needed */
-    margin: 10px; /* Add margin to create space between products */
-    padding: 23px; /* Add padding to style the product box */
-    border: 0px solid #ccc; /* Add border for visual separation */
-    text-align: center; /* Align text to the left */
-    box-sizing: border-box; /* Include padding and border in width calculation */
-}
-
 
         .logo {
             max-width: 10%;
             height: auto;
             margin: 0 auto;
             display: block;
-	    margin-bottom: -5px;
+            margin-bottom: -5px;
         }
 
         .menu {
@@ -50,23 +36,23 @@
             margin-top: -5px;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .menu li {
-            margin-right: 10px;
+            margin: 5px 10px;
         }
 
         .menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 14px; /* Adjust the font size as needed */
+            font-size: 14px;
         }
 
         .menu li a:hover {
             color: #555;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
@@ -74,8 +60,8 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #000; /* Changed background color to black */
-            color: #fff !important; /* Changed font color to white and added !important */
+            background-color: #000;
+            color: #fff !important;
             min-width: 160px;
             z-index: 1;
             top: 100%;
@@ -87,115 +73,195 @@
         }
 
         .dropdown-content a {
-            color: #fff !important; /* Changed font color to white and added !important */
+            color: #fff !important;
             padding: 12px 16px;
             display: block;
             text-align: left;
             text-decoration: none;
         }
 
-        /* Main content */
         .main-content {
-            margin-top: 10px; /* Adjust margin to make space for header */
+            margin-top: 20px;
             text-align: center;
         }
 
-        /* Footer Styles */
         .footer {
             background-color: #fff;
             padding: 20px 0;
             text-align: center;
             width: 100%;
-            position: realtive;
-            bottom: 0;
+        }
+
+        /* Floating Cart Button */
+        #floating-cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        #floating-cart:hover {
+            transform: scale(1.1);
+        }
+
+        #floating-cart img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Cart count badge */
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        /* Pop animation for badge */
+        .pop {
+            transform: scale(1.5);
         }
     </style>
 </head>
 
 <body>
 <div class="container">
-    <a href="https://www.ragrugz.com/"><img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo"></a>
+    <a href="https://www.ragrugz.com/">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo">
+    </a>
     <ul class="menu">
         <li><a href="index.html">Home</a></li>
-
-                  <li class="dropdown">
-                <a href="#" class="dropbtn">Our Products</a>
-                <div class="dropdown-content">
-                    <a href="ourrugs.html">Our Rugs</a>
-                    <a href="ragrugapparel.html">RagRugz Apparel</a>
-                    <a href="#">The Rug Purse</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">About Us</a>
-                <div class="dropdown-content">
-                    <a href="thefounder.html">The Founder</a>
-                    <a href="theragstory.html">The Rag Story</a>
-                </div>
-            </li>
-            <li><a href="custom-order.html">Custom Order</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-	    <li><a href="faq.html">FAQ</a></li>
-        </ul>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Our Products</a>
+            <div class="dropdown-content">
+                <a href="ourrugs.html">Our Rugs</a>
+                <a href="ragrugapparel.html">RagRugz Apparel</a>
+                <a href="#">The Rug Purse</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About Us</a>
+            <div class="dropdown-content">
+                <a href="thefounder.html">The Founder</a>
+                <a href="theragstory.html">The Rag Story</a>
+            </div>
+        </li>
+        <li><a href="custom-order.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+    </ul>
 </div>
 
-<div class="main-content">
+
+
 <div style="max-width: 1040px; margin: 0 auto;">
-                <div>
-                <a class="anchor" id="fitPrintAnchor" style="padding-top: 0px; margin-top: 0px;"></a>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <script type="text/javascript">
-                  iFrameResize(
-                  {
-                    log: false,
-                    checkOrigin: false,
-                    heightCalculationMethod: 'grow',
-                    autoResize: false,
-                    onMessage: function(messageData) {
-                      var jsonData = JSON.parse(messageData.message);
-                      if (jsonData.action == 'navigateTo') {
-                        window.onbeforeunload = null;
-                        window.parent.location.href= jsonData.data;
-                      }
-                      if (jsonData.action == 'scrollTo') {
-                        setTimeout(function () {
-                          document.getElementById('fitPrintAnchor').scrollIntoView({behavior: 'smooth', block: 'center'});
-                        },200);
-                      }
-                },
-                    onInit: function(iframe)
-                    {
-                      $(document).ready(function()
-                      {
-          iframe.iFrameResizer = {
-                        $(window).on('scroll', () =>
-                        {
-                          const scrollFromTop = $(document).scrollTop();
-                          var fitPrintIframe = $("#fitPrintIframe");
-                          var offset = fitPrintIframe.offset();
-                          if (scrollFromTop > offset.top + 10)
-                          {
-                            iframe.iFrameResizer.sendMessage(scrollFromTop - (offset.top - 10));
-                          }
-                        });
-                      });
-                    }
-                  }, '#fitPrintIframe');
-                </script>
-                <br>
-                <iframe id="fitPrintIframe" frameborder="0" scrolling="no" src="https://shop.fitprint.io/v2.html?shop=be20eb35-2c86-41bd-8f33-732bedba2b20" width="100%" onload="iFrameResize({ log: false, checkOrigin: false, heightCalculationMethod: 'grow', autoResize: false, onMessage: function(messageData) {var jsonData = JSON.parse(messageData.message);if (jsonData.action == 'navigateTo') {window.onbeforeunload = null;window.parent.location.href= jsonData.data;}if (jsonData.action == 'scrollTo') {setTimeout(function () {document.getElementById('fitPrintAnchor').scrollIntoView({behavior: 'smooth', block: 'center'});},200);}},onInit: function(iframe) { $(document).ready(function () { $(window).on('scroll', () => { const scrollFromTop = $(document).scrollTop(); var fitPrintIframe = $('#fitPrintIframe'); var offset = fitPrintIframe.offset(); if (scrollFromTop > offset.top + 10) { iframe.iFrameResizer.sendMessage(scrollFromTop - (offset.top - 10)); }if (scrollFromTop == 0 ) { iframe.iFrameResizer.sendMessage(scrollFromTop); }  }); }); }}, '#fitPrintIframe');"></iframe>
-                <style>
-                  iframe {
-                    width: 1px; min-width: 100%;
-                  }
-                </style>
-                </div>
-              </div>
+  <a class="anchor" id="printifyAnchor"></a>
 
-<div class="footer">
-	
+  <!-- iFrame Resizer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+
+  <!-- Embed Printify storefront -->
+<iframe 
+  id="printifyIframe"
+  frameborder="0"
+  scrolling="yes"
+  src="https://ragrugz.printify.me/"
+  width="100%"
+  height="2500"
+  style="border: none;">
+</iframe>
+
+
+  <style>
+    iframe {
+     min-height: 100%;
+      min-width: 100%;
+    }
+  </style>
+
+  <!-- Resizer Config -->
+  <script type="text/javascript">
+  iFrameResize({
+    log: false,
+    checkOrigin: false,
+    heightCalculationMethod: 'max',
+    autoResize: true
+  }, '#printifyIframe');
+</script>
+
 </div>
+
+
+
+
+<script>
+    // Function to open Printify cart
+    function openPrintifyCart() {
+        if(window.PrintifyStore) {
+            window.PrintifyStore.openCart();
+        } else {
+            console.warn('Printify store not loaded yet.');
+        }
+    }
+
+    let previousCount = 0;
+
+    // Update cart count and animate badge
+    function updateCartCount() {
+        if(window.PrintifyStore && PrintifyStore.getCartItems) {
+            const items = PrintifyStore.getCartItems();
+            const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cart-count');
+
+            if(totalCount !== previousCount) {
+                // Animate badge
+                badge.classList.add('pop');
+                setTimeout(() => badge.classList.remove('pop'), 200);
+            }
+
+            badge.innerText = totalCount;
+            previousCount = totalCount;
+        }
+    }
+
+    setInterval(updateCartCount, 2000);
+
+    // Smooth floating cart scroll
+    const cart = document.getElementById('floating-cart');
+    let targetTop = 20;
+    let currentTop = 20;
+
+    window.addEventListener('scroll', () => {
+        targetTop = 20 + window.scrollY;
+    });
+
+    function animateCart() {
+        currentTop += (targetTop - currentTop) * 0.1; // easing factor
+        cart.style.top = currentTop + 'px';
+        requestAnimationFrame(animateCart);
+    }
+    animateCart();
+</script>
 
 </body>
 </html>
