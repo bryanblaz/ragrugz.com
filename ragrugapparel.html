@@ -173,95 +173,53 @@
 </div>
 
 
-
 <div style="max-width: 1040px; margin: 0 auto;">
   <a class="anchor" id="printifyAnchor"></a>
 
   <!-- iFrame Resizer -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
 
-  <!-- Embed Printify storefront -->
-<iframe 
-  id="printifyIframe"
-  frameborder="0"
-  scrolling="yes"
-  src="https://ragrugz.printify.me/"
-  width="100%"
-  height="2500"
-  style="border: none;">
-</iframe>
-
-
-  <style>
-    iframe {
-     min-height: 100%;
-      min-width: 100%;
-    }
-  </style>
+  <!-- Printify storefront -->
+  <iframe 
+    id="printifyIframe"
+    frameborder="0"
+    scrolling="yes"
+    src="https://ragrugz.printify.me/"
+    width="100%"
+    style="min-height: 2500px; border: none;">
+  </iframe>
 
   <!-- Resizer Config -->
   <script type="text/javascript">
-  iFrameResize({
-    log: false,
-    checkOrigin: false,
-    heightCalculationMethod: 'max',
-    autoResize: true
-  }, '#printifyIframe');
-</script>
+    iFrameResize({
+      log: false,
+      checkOrigin: false,
+      heightCalculationMethod: 'max',
+      autoResize: true
+    }, '#printifyIframe');
+  </script>
 
+  <style>
+    /* Make iframe adapt on mobile */
+    #printifyIframe {
+      width: 100%;
+      min-height: 800px;
+    }
+    @media (max-width: 768px) {
+      #printifyIframe {
+        min-height: 1200px; /* give more space for stacked layout */
+      }
+    }
+    @media (max-width: 480px) {
+      #printifyIframe {
+        min-height: 1500px;
+      }
+    }
+  </style>
 </div>
 
 
 
-
-<script>
-    // Function to open Printify cart
-    function openPrintifyCart() {
-        if(window.PrintifyStore) {
-            window.PrintifyStore.openCart();
-        } else {
-            console.warn('Printify store not loaded yet.');
-        }
-    }
-
-    let previousCount = 0;
-
-    // Update cart count and animate badge
-    function updateCartCount() {
-        if(window.PrintifyStore && PrintifyStore.getCartItems) {
-            const items = PrintifyStore.getCartItems();
-            const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
-            const badge = document.getElementById('cart-count');
-
-            if(totalCount !== previousCount) {
-                // Animate badge
-                badge.classList.add('pop');
-                setTimeout(() => badge.classList.remove('pop'), 200);
-            }
-
-            badge.innerText = totalCount;
-            previousCount = totalCount;
-        }
-    }
-
-    setInterval(updateCartCount, 2000);
-
-    // Smooth floating cart scroll
-    const cart = document.getElementById('floating-cart');
-    let targetTop = 20;
-    let currentTop = 20;
-
-    window.addEventListener('scroll', () => {
-        targetTop = 20 + window.scrollY;
-    });
-
-    function animateCart() {
-        currentTop += (targetTop - currentTop) * 0.1; // easing factor
-        cart.style.top = currentTop + 'px';
-        requestAnimationFrame(animateCart);
-    }
-    animateCart();
-</script>
 
 </body>
 </html>
