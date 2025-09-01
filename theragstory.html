@@ -1,170 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rag Story - RagRugz™</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Rag Story - RagRugz™</title>
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    /* Fixed navbar */
+    .menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
-        .logo {
-            max-width: 25%;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            margin-bottom: -5px;
-        }
+    .menu li {
+        margin-right: 10px;
+    }
 
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin-top: -5px;
-            display: flex;
-            justify-content: center;
-        }
+    .menu li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
 
+    .menu li a:hover {
+        color: #555;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #000;
+        color: #fff !important;
+        min-width: 160px;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: #fff !important;
+        padding: 12px 16px;
+        display: block;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #333;
+    }
+
+    .cart-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    /* Main container with top margin to avoid overlap */
+    .container {
+        max-width: 800px;
+        margin: 80px auto 0 auto; /* top margin = navbar height */
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        max-width: 25%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        margin-top: 0px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .center-content {
+        text-align: left;
+        margin: 0px 0;
+    }
+
+    .address {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .foot-image {
+        max-width: 15%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    @media (max-width: 600px) {
         .menu li {
             margin-right: 10px;
         }
 
-        .menu li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .menu li a:hover {
-            color: #555;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            color: #fff !important;
-            min-width: 160px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: #fff !important;
-            padding: 12px 16px;
-            display: block;
-            text-align: left;
-            text-decoration: none;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #333;
-        }
-
-        .cart-icon {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 30px;
-            height: auto;
-            cursor: pointer;
-        }
-
         .main-content {
-            margin-top: 20px;
+            margin-top: 0px;
             padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            line-height: 1.6;
         }
-
-        .center-content {
-            text-align: left;
-            margin: 10px 0;
-        }
-
-        .address {
-            font-size: 16px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .foot-image {
-            max-width: 15%;
-            height: auto;
-            display: block;
-            margin: 10px auto;
-        }
-
-        @media (max-width: 600px) {
-            .menu li {
-                margin-right: 10px;
-            }
-
-            .main-content {
-                margin-top: 80px;
-                padding: 10px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <a href="https://store.ragrugz.com/">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" 
-                 alt="Logo" class="logo">
-        </a>
-        <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Our Products</a>
-                <div class="dropdown-content">
-                    <a href="ourrags.html">Our Rugs</a>
-                    <a href="ragrugapparel.html">RagRugz Apparel</a>
-                    <a href="#">The Rug Purse</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">About Us</a>
-                <div class="dropdown-content">
-                    <a href="thefounder.html">The Founder</a>
-                    <a href="theragstory.html">The Rag Story</a>
-                </div>
-            </li>
-            <li><a href="custom-order.html">Custom Order</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
 
-        <div class="main-content">
-            <p><strong>The Rag Story</strong></p>
+<!-- Fixed Navbar -->
+<ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">Our Products</a>
+        <div class="dropdown-content">
+            <a href="ourrags.html">Our Rugs</a>
+            <a href="ragrugapparel.html">RagRugz Apparel</a>
+            <a href="#">The Rug Purse</a>
+        </div>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">About Us</a>
+        <div class="dropdown-content">
+            <a href="thefounder.html">The Founder</a>
+            <a href="theragstory.html">The Rag Story</a>
+        </div>
+    </li>
+    <li><a href="custom-order.html">Custom Order</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+</ul>
+
+<div class="container">
+    <a href="https://store.ragrugz.com/">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" 
+             alt="Logo" class="logo">
+    </a>
+
+    <div class="main-content">
+                    <p><strong>The Rag Story</strong></p>
             <p>Ragrugz™ was more than just a design decision—it was an expression of the essence of the company, a visual representation of its values, creativity, and vision. The colors and shapes that make up the Ragrugz logo are a tapestry of meaning, woven together to tell a story of inspiration, innovation, and community.</p>
 
             <p><strong>The Colors of Creativity and Connection</strong></p>
@@ -191,34 +202,35 @@
                 <p><strong>Passion</strong>: Red embodies the drive and enthusiasm of our brand.</p>
                 <p><strong>Balance and Harmony</strong>: The interplay of colors and shapes reflects the harmony in our designs.</p>
             </div>
-        </div>
-
-        <p class="address"><strong>Experiment Projects LLC</strong></p>
-        <div>
-            <a href="index.html"><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo" class="foot-image"></a>
-        </div>
     </div>
 
-    <a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
+    <p class="address"><strong>Experiment Projects LLC</strong></p>
+    <div>
+        <a href="index.html"><img src="https://i.ibb.co/8xWrdfL/ragrugz-ballons.png" alt="Logo" class="foot-image"></a>
+    </div>
+</div>
 
-    <script>
-        // Dropdown click toggle
-        document.addEventListener('click', function(event) {
-            const dropdowns = document.querySelectorAll('.dropdown-content');
-            dropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
-                    dropdown.style.display = 'none';
-                }
-            });
-        });
+<a href="https://store.ragrugz.com/cart"><img class="cart-icon" src="https://i.ibb.co/pZSB419/cart.png" alt="Cart Icon"></a>
 
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.addEventListener('click', function(event) {
-                event.stopPropagation();
-                const dropdownContent = this.querySelector('.dropdown-content');
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-            });
+<script>
+    // Dropdown click toggle
+    document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(dropdown => {
+            if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
         });
-    </script>
+    });
+
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const dropdownContent = this.querySelector('.dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
 </body>
 </html>
