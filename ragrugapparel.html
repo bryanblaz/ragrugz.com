@@ -1,150 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Ragrugz</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            min-height: 100vh;
-            overflow: hidden; /* 🚫 disable main page scroll */
-        }
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="https://i.ibb.co/1LznF7K/site-logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Ragrugz</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      min-height: 100vh;
+      overflow: hidden; /* 🚫 disable main page scroll */
+    }
 
-        .container {
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-            box-sizing: border-box;
-            background-color: #fff;
-        }
+    .container {
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff;
+      border-bottom: 2px solid #fff;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
 
-        .logo {
-            max-width: 10%;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            margin-bottom: -5px;
-        }
+    .logo {
+      max-width: 10%;
+      height: auto;
+      margin: 0 auto -5px auto;
+      display: block;
+    }
 
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin-top: -5px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      margin: -5px 0 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .menu li {
-            margin: 5px 10px;
-        }
+    .menu li {
+      margin: 5px 10px;
+    }
 
-        .menu li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
 
-        .menu li a:hover {
-            color: #555;
-        }
+    .menu li a:hover {
+      color: #555;
+    }
 
-        .dropdown {
-            position: relative;
-        }
+    .dropdown {
+      position: relative;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            color: #fff !important;
-            min-width: 160px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      color: #fff !important;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        .dropdown-content a {
-            color: #fff !important;
-            padding: 12px 16px;
-            display: block;
-            text-align: left;
-            text-decoration: none;
-        }
+    .dropdown-content a {
+      color: #fff !important;
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+    }
 
-        .main-content {
-            margin-top: 20px;
-            text-align: center;
-        }
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 22px;
+      background: none;
+      border: none;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
 
-        .footer {
-            background-color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            width: 100%;
-        }
+    /* Full-screen iframe container */
+    #iframe-container {
+      position: relative;
+      width: 100%;
+      height: 90vh; /* fills viewport */
+      margin-top: 120px; /* pushes iframe below menu */
+    }
 
-        /* Full-screen iframe container */
-        #iframe-container {
-            position: relative;
-            width: 100%;
-            height: 90vh; /* fills viewport */
-        }
+    #printifyIframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
 
-        #printifyIframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-    </style>
+    /* Responsive menu */
+    @media (max-width: 768px) {
+      .logo { max-width: 30%; }
+
+      .hamburger { display: block; }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        margin: 0;
+      }
+
+      .menu.active { display: flex; }
+
+      .menu li {
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
     <a href="https://www.ragrugz.com/">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" alt="Logo" class="logo">
     </a>
+    <button class="hamburger">☰</button>
     <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Our Products</a>
-            <div class="dropdown-content">
-                <a href="ourrugs.html">Our Rugs</a>
-                <a href="ragrugapparel.html">RagRugz Apparel</a>
-                <a href="#">The Rug Purse</a>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">About Us</a>
-            <div class="dropdown-content">
-                <a href="thefounder.html">The Founder</a>
-                <a href="theragstory.html">The Rag Story</a>
-            </div>
-        </li>
-        <li><a href="custom-order.html">Custom Order</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Our Products</a>
+        <div class="dropdown-content">
+          <a href="ourrugs.html">Our Rugs</a>
+          <a href="ragrugapparel.html">RagRugz Apparel</a>
+          <a href="#">The Rug Purse</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">About Us</a>
+        <div class="dropdown-content">
+          <a href="thefounder.html">The Founder</a>
+          <a href="theragstory.html">The Rag Story</a>
+        </div>
+      </li>
+      <li><a href="custom-order.html">Custom Order</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
-</div>
+  </div>
 
-<!-- Fullscreen iframe wrapper -->
-<div id="iframe-container">
-  <iframe 
-    id="printifyIframe"
-    src="https://ragrugz.printify.me/"
-    scrolling="yes">
-  </iframe>
-</div>
+  <!-- Fullscreen iframe wrapper -->
+  <div id="iframe-container">
+    <iframe 
+      id="printifyIframe"
+      src="https://ragrugz.printify.me/"
+      scrolling="yes">
+    </iframe>
+  </div>
 
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Dropdown click toggle for mobile
+    const dropdownTriggers = document.querySelectorAll('.dropdown > a');
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function(event) {
+      document.querySelectorAll('.dropdown-content').forEach(dc => {
+        if (!dc.parentElement.contains(event.target)) {
+          dc.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
