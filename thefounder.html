@@ -323,16 +323,14 @@
 <div class="footer"></div>
 
 <script>
-  // Mobile-only zoom-out
-  function isMobile() {
-    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    if (isMobile()) {
-      document.body.style.zoom = "0.10"; // Zoom out 80% on mobile
+  // Mobile-only viewport adjustment
+  if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (viewport) {
+      // Set a smaller initial scale to zoom out on mobile
+      viewport.setAttribute('content', 'width=1024, initial-scale=0.5, minimum-scale=0.5, maximum-scale=5, user-scalable=yes');
     }
-  });
+  }
 
   // Dropdown click behavior
   document.addEventListener('click', function(event) {
