@@ -84,29 +84,25 @@
     }
 
     /* Main container with top margin to avoid overlap */
-    .container {
-        max-width: 800px;
-        margin: 80px auto 0 auto; /* top margin = navbar height */
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+.container {
+    max-width: 800px;
+    margin: 10px auto 0 auto; /* enough top margin for logo + navbar */
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-    .logo {
-        max-width: 25%;
-        height: auto;
-        display: block;
-        margin-bottom: 10px;
-    }
+.logo {
+    max-width: 18%;      /* controls size relative to container */
+    height: 150px auto;        /* maintain aspect ratio */
+    display: block;
+    margin: 20px auto;   /* centers logo and gives some vertical spacing */
+}
 
     .main-content {
-        margin-top: 0px;
-        padding: 10px;
+        margin-top: 6px;
+        padding: 20px;
         width: 100%;
         box-sizing: border-box;
         text-align: center;
@@ -145,6 +141,11 @@
 </head>
 <body>
 
+<a href="index.html">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" 
+         alt="Logo" class="logo">
+</a>
+
 <!-- Fixed Navbar -->
 <ul class="menu">
     <li><a href="index.html">Home</a></li>
@@ -169,11 +170,6 @@
 </ul>
 
 <div class="container">
-    <a href="https://store.ragrugz.com/">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczN54cwUIXl_7fEuClgXQQnwGQMvrl1ZRabQiZkBuVYRQD8sAQvCVuAjR1NIaOS4F3Jfev4ClhL5gESV01oH-Ekw9XagKbtNE9dO5hiFm_t_iltLXtHHHSGx5KVq0a37es4xtTpjHijcjo46ve84eTcx=w1054-h532-s-no-gm?authuser=0" 
-             alt="Logo" class="logo">
-    </a>
-
     <div class="main-content">
                     <p><strong>The Rag Story</strong></p>
             <p>Ragrugz™ was more than just a design decision—it was an expression of the essence of the company, a visual representation of its values, creativity, and vision. The colors and shapes that make up the Ragrugz logo are a tapestry of meaning, woven together to tell a story of inspiration, innovation, and community.</p>
